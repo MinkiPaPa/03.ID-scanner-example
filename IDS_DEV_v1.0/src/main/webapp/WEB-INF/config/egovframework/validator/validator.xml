@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC 
+    "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" 
+    "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+
+    <formset>
+        <form name="loginVO">
+        	<field property="userId" depends="required">
+        		<arg0 key="User ID" />
+			</field>
+			<field property="pw" depends="required">
+                <arg0 key="Password" />
+            </field>
+        </form>
+        
+        <form name="wifiVO">
+			<field property="ssid" depends="required">
+				<arg0 key="SSID" />
+			</field>
+			<field property="psk" depends="required">
+				<arg0 key="암호" />
+			</field>
+			<field property="identity" depends="required">
+				<arg0 key="인증정보" />
+			</field>
+			<field property="dvcName" depends="required">
+				<arg0 key="장치 이름" />
+			</field>
+        </form>
+        
+        <form name="bizexpenseSelectVO">
+			<field property="relayTp" depends="required">
+				<arg0 key="구분" resource="false" />
+			</field>
+			<field property="spenSt" depends="required">
+				<arg0 key="진행상태" resource="false" />
+			</field>
+			<field property="docNum" depends="maxlength">
+				<arg0 key="문서번호" resource="false" />
+				<arg1 key="50" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+			</field>
+			<field property="docTitle" depends="maxlength">
+				<arg0 key="문서제목" resource="false" />
+				<arg1 key="200" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field property="bizSectionNm" depends="required">
+				<arg0 key="사업항목" resource="false" />
+			</field>
+			<field property="budgetCd" depends="required">
+				<arg0 key="비목" resource="false" />
+			</field>
+			<field property="expAmt" depends="required, integer">
+				<arg0 key="금액" resource="false" />
+			</field>
+			<field property="beneficiary" depends="integer">
+				<arg0 key="수혜인원" resource="false" />
+			</field>
+			<field property="basis" depends="maxlength">
+				<arg0 key="산출근거" resource="false" />
+				<arg1 key="1000" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+        </form>
+    </formset>
+
+</form-validation>
