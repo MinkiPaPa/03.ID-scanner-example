@@ -1,1 +1,0 @@
-g++ -fPIC -shared -z noexecstack -Wall -g -I"/volume1/@appstore/Java8/j2sdk-image/include" -I"/volume1/@appstore/Java8/j2sdk-image/include/linux" $1.cpp -o lib$1.so
